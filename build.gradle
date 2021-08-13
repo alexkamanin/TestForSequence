@@ -1,0 +1,19 @@
+buildscript {
+
+	apply from: 'dependencies.gradle'
+
+	repositories {
+		google()
+		mavenCentral()
+	}
+
+	dependencies {
+
+		classpath Dependencies.GRADLE
+		classpath Dependencies.KOTLIN.PlUGIN
+	}
+}
+
+task clean(type: Delete) {
+	delete rootProject.buildDir
+}
