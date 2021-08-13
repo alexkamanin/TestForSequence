@@ -1,0 +1,13 @@
+ext.Configs = [
+	APPLICATION_ID    : "ru.sequence.enterprise",
+
+	TARGET_SDK        : 30,
+	COMPILE_SDK       : 30,
+	MIN_SDK           : 22,
+	BUILD_TOOL_VERSION: "30.0.2",
+
+	JVM_TARGET        : "1.8",
+
+	CODE              : 1,
+	NAME              : "1.0",
+]

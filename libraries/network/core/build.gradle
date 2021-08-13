@@ -1,0 +1,17 @@
+apply plugin: Plugins.ANDROID_LIBRARY
+apply plugin: Plugins.KOTLIN_ANDROID
+
+apply from: "$rootDir/build_system/library.gradle"
+
+dependencies {
+
+	implementation Dependencies.CORE
+
+	implementation Dependencies.KOIN.CORE
+	implementation Dependencies.KOIN.KOIN_EXT
+	implementation Dependencies.KOIN.KOIN_SCOPE
+
+	implementation Dependencies.SQUAREUP.RETROFIT
+	implementation Dependencies.SQUAREUP.RETROFIT_GSON
+	implementation Dependencies.SQUAREUP.OKHTTP_INTERCEPTOR
+}
