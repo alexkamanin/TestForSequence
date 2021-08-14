@@ -6,6 +6,7 @@ ext.Modules = [
 	],
 	LIBRARIES: [
 		THEMES : ":libraries:themes",
+		CORE   : ":libraries:core",
 		NETWORK: [
 			CORE: ":libraries:network:core"
 		]
