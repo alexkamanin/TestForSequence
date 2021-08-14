@@ -10,4 +10,9 @@ ext.Configs = [
 
 	CODE              : 1,
 	NAME              : "1.0",
+
+	TYPE_STRING                        : "String",
+
+	CONFIG_FIELD_BACKEND_ENDPOINT      : "BACKEND_ENDPOINT",
+	BACKEND_ENDPOINT                   : "\"https://s3-eu-west-1.amazonaws.com/sequeniatesttask/\""
 ]

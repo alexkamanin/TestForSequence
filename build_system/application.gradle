@@ -22,6 +22,12 @@ android {
 	buildTypes {
 		release {
 			minifyEnabled false
+			buildConfigField Configs.TYPE_STRING, Configs.CONFIG_FIELD_BACKEND_ENDPOINT, Configs.BACKEND_ENDPOINT
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+		debug {
+			minifyEnabled false
+			buildConfigField Configs.TYPE_STRING, Configs.CONFIG_FIELD_BACKEND_ENDPOINT, Configs.BACKEND_ENDPOINT
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}
@@ -36,6 +42,7 @@ android {
 	}
 
 	buildFeatures {
+		buildConfig true
 		viewBinding true
 	}
 }
