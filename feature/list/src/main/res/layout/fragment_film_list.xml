@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:id="@+id/materialToolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:title="@string/film_list_toolbar_title" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/film_list_adapter"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+		app:spanCount="2" />
+
+	<ProgressBar
+		android:id="@+id/film_progress_bar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+	<LinearLayout
+		android:id="@+id/connection_error"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginBottom="@dimen/margin_padding_l"
+			android:gravity="center"
+			android:lineSpacingMultiplier="1.3"
+			android:text="@string/error_message"
+			android:textSize="16sp" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/repeat_load"
+			style="@style/Widget.MaterialComponents.Button.TextButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/error_button_text" />
+
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
