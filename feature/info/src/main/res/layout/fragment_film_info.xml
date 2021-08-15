@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:id="@+id/info_toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:navigationIcon="@drawable/ic_arrow_back" />
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<androidx.constraintlayout.widget.Guideline
+				android:id="@+id/film_guideline"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				app:layout_constraintGuide_percent="0.5"
+				tools:viewBindingIgnore="true" />
+
+			<ImageView
+				android:id="@+id/film_cover"
+				android:layout_width="@dimen/width_height_0"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/margin_padding_s"
+				app:layout_constraintEnd_toStartOf="@+id/film_guideline"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/info_toolbar"
+				tools:ignore="NotSibling"
+				tools:layout_height="200dp" />
+
+			<TextView
+				android:id="@+id/film_original_name"
+				android:layout_width="@dimen/width_height_0"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/margin_padding_l"
+				android:layout_marginTop="@dimen/margin_padding_s"
+				android:paddingBottom="@dimen/margin_padding_s"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/film_guideline"
+				app:layout_constraintTop_toBottomOf="@+id/info_toolbar"
+				tools:ignore="NotSibling"
+				tools:text="Pacific Rim: Uprising" />
+
+			<TextView
+				android:id="@+id/film_year"
+				android:layout_width="@dimen/width_height_0"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/margin_padding_l"
+				android:paddingBottom="@dimen/margin_padding_s"
+				android:text="@string/film_year"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/film_guideline"
+				app:layout_constraintTop_toBottomOf="@+id/film_original_name"
+				tools:text="Год: 2018" />
+
+			<TextView
+				android:id="@+id/film_rating"
+				android:layout_width="@dimen/width_height_0"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/margin_padding_l"
+				android:text="@string/film_rating"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/film_guideline"
+				app:layout_constraintTop_toBottomOf="@+id/film_year"
+				tools:text="Рейтинг: 6.083" />
+
+			<TextView
+				android:id="@+id/film_description"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/margin_padding_s"
+				android:layout_marginTop="@dimen/margin_padding_l"
+				android:layout_marginEnd="@dimen/margin_padding_s"
+				android:justificationMode="inter_word"
+				android:lineSpacingMultiplier="1.3"
+				android:paddingBottom="@dimen/margin_padding_l"
+				app:layout_constraintTop_toBottomOf="@+id/film_cover"
+				tools:text="Команда пилотируемых роботов-защитников остановила вторжение гигантских инопланетных монстров. Великая битва за Тихоокеанский рубеж ознаменовала новую главу в истории человечества. Однако война только начинается…\n\rПришло время нового поколения отстаивать своё право на Землю." />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</ScrollView>
+
+</LinearLayout>
