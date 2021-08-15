@@ -12,5 +12,11 @@ dependencies {
 
 	implementation Dependencies.COROUTINES_CORE
 
+	implementation Dependencies.KOIN.CORE
+	implementation Dependencies.KOIN.KOIN_EXT
+	implementation Dependencies.KOIN.KOIN_SCOPE
+
+	implementation Dependencies.SQUAREUP.RETROFIT
+
 	implementation project(Modules.SHARED.FILM.DOMAIN)
 }

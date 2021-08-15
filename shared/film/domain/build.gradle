@@ -10,5 +10,9 @@ dependencies {
 	implementation Dependencies.APP_COMPAT
 	implementation Dependencies.MATERIAL
 
+	implementation Dependencies.KOIN.CORE
+	implementation Dependencies.KOIN.KOIN_EXT
+	implementation Dependencies.KOIN.KOIN_SCOPE
+
 	implementation Dependencies.COROUTINES_CORE
 }
