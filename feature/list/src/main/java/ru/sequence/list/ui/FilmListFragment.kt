@@ -51,6 +51,12 @@ class FilmListFragment : BaseFragment<FragmentFilmListBinding>(), FilmListView {
 		presenter.onSaveState(outState)
 	}
 
+	override fun onDestroy() {
+		super.onDestroy()
+
+		presenter.onDetachView()
+	}
+
 	private fun initState(savedInstanceState: Bundle?) {
 
 		savedInstanceState?.let {

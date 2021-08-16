@@ -14,4 +14,6 @@ interface FilmPresenter {
 	fun getActiveGenre(): FilmGenre?
 	fun onSaveState(outState: Bundle)
 	fun onNewGenre(genre: FilmGenre)
+
+	fun onDetachView()
 }

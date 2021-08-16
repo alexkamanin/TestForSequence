@@ -11,7 +11,7 @@ import ru.sequence.list.ui.FilmListView
 import kotlin.coroutines.CoroutineContext
 
 class FilmPresenterImpl(
-	private val view: FilmListView,
+	private var view: FilmListView?,
 	private val getAllFilmsUseCase: GetAllFilmsUseCase
 ) : FilmPresenter, CoroutineScope {
 
@@ -32,14 +32,14 @@ class FilmPresenterImpl(
 		job?.cancel()
 		job = launch {
 			try {
-				withContext(Dispatchers.Main) { view.onStartedLoadData() }
+				withContext(Dispatchers.Main) { view?.onStartedLoadData() }
 				films.addAll(getAllFilmsUseCase().map { FilmUiModel.Cover(it) }.sortedBy { it.filmEntity.localized_name })
 				if (activeGenre != null)
-					withContext(Dispatchers.Main) { view.onDataReceived(getSortedFilmsByGenre(activeGenre!!)) }
+					withContext(Dispatchers.Main) { view?.onDataReceived(getSortedFilmsByGenre(activeGenre!!)) }
 				else
-					withContext(Dispatchers.Main) { view.onDataReceived(films) }
+					withContext(Dispatchers.Main) { view?.onDataReceived(films) }
 			} catch (e: Exception) {
-				withContext(Dispatchers.Main) { view.onConnectionBroken() }
+				withContext(Dispatchers.Main) { view?.onConnectionBroken() }
 
 			}
 		}
@@ -58,10 +58,10 @@ class FilmPresenterImpl(
 
 		if (isChecked) {
 			activeGenre = genre
-			view.onDataReceived(getSortedFilmsByGenre(genre))
+			view?.onDataReceived(getSortedFilmsByGenre(genre))
 		} else if (activeGenre!!.name == genre.name) {
 			activeGenre = null
-			view.onDataReceived(films)
+			view?.onDataReceived(films)
 		}
 	}
 
@@ -70,15 +70,15 @@ class FilmPresenterImpl(
 	}
 
 	override fun onItemClick(film: FilmEntity) {
-		view.goToInfoFragment(film)
+		view?.goToInfoFragment(film)
 	}
 
 	override fun onRestoredContent() {
 
 		if (activeGenre != null) {
-			view.onDataReceived(getSortedFilmsByGenre(activeGenre!!))
+			view?.onDataReceived(getSortedFilmsByGenre(activeGenre!!))
 		} else if (films.any { it is FilmUiModel.Cover }) {
-			view.onDataReceived(films)
+			view?.onDataReceived(films)
 		}
 	}
 
@@ -92,5 +92,9 @@ class FilmPresenterImpl(
 
 	override fun onNewGenre(genre: FilmGenre) {
 		activeGenre = genre
+	}
+
+	override fun onDetachView() {
+		view = null
 	}
 }
