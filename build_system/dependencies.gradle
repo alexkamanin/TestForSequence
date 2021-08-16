@@ -1,0 +1,67 @@
+ext.Versions = [
+	KOTLIN                : "1.5.21",
+	GRADLE                : "7.0.0", //
+	MATERIAL              : "1.4.0",
+	CONSTRAINT_LAYOUT     : "2.1.0",
+	CORE                  : "1.6.0",
+	APP_COMPAT            : "1.3.1",
+	KOIN                  : "2.2.3",
+	COROUTINES            : "1.4.2",
+	ROOM                  : "2.2.6",
+	NAVIGATION            : "2.3.5",
+	RETROFIT              : "2.9.0",
+	OKHTTP                : "4.9.0",
+	GLIDE                 : "4.12.0",
+	WORK_MANAGER_KOIN     : "2.2.0",
+	WORK_MANAGER_ARCH_WORK: "1.0.1",
+	WORK_MANAGER_WORK_KTX : "2.5.0"
+]
+
+ext.Dependencies = [
+	KOTLIN           : [
+		PlUGIN          : "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}",
+		STANDARD_LIBRARY: "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
+	],
+
+	KOIN             : [
+		CORE          : "io.insert-koin:koin-core:${Versions.KOIN}",
+		KOIN_EXT      : "io.insert-koin:koin-androidx-ext:${Versions.KOIN}",
+		KOIN_VIEWMODEL: "io.insert-koin:koin-androidx-viewmodel:${Versions.KOIN}",
+		KOIN_SCOPE    : "io.insert-koin:koin-androidx-scope:${Versions.KOIN}"
+	],
+
+	GRADLE           : "com.android.tools.build:gradle:${Versions.GRADLE}",
+	MATERIAL         : "com.google.android.material:material:${Versions.MATERIAL}",
+	CORE             : "androidx.core:core-ktx:${Versions.CORE}",
+	CONSTRAINT_LAYOUT: "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}",
+	APP_COMPAT       : "androidx.appcompat:appcompat:${Versions.APP_COMPAT}",
+	COROUTINES_CORE  : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}",
+
+	ROOM             : [
+		ROOM_RUNTIME : "androidx.room:room-runtime:${Versions.ROOM}",
+		ROOM_COMPILER: "androidx.room:room-compiler:${Versions.ROOM}",
+		ROOM_KTX     : "androidx.room:room-ktx:${Versions.ROOM}"
+	],
+
+	SQUAREUP         : [
+		RETROFIT          : "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}",
+		RETROFIT_GSON     : "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT}",
+		OKHTTP_INTERCEPTOR: "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
+	],
+
+	NAVIGATION       : [
+		FRAGMENT: "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}",
+		UI      : "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
+	],
+
+	GLIDE            : [
+		GLIDE   : "com.github.bumptech.glide:glide:${Versions.GLIDE}",
+		COMPILER: "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
+	],
+
+	WORK_MANAGER     : [
+		KOIN     : "org.koin:koin-androidx-workmanager:${Versions.WORK_MANAGER_KOIN}",
+		ARCH_WORK: "android.arch.work:work-runtime:${Versions.WORK_MANAGER_ARCH_WORK}",
+		WORK_KTX : "androidx.work:work-runtime-ktx:${Versions.WORK_MANAGER_WORK_KTX}"
+	]
+]

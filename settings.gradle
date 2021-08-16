@@ -6,4 +6,7 @@ dependencyResolutionManagement {
 	}
 }
 rootProject.name = "TestForSequence"
-include ':app'
+apply from: 'build_system/modules.gradle'
+apply from: 'build_system/utils.gradle'
+
+unpackMapValues(Modules) { include(it) }

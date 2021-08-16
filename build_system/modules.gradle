@@ -1,0 +1,20 @@
+ext.Modules = [
+	APP      : ":app",
+	FEATURE  : [
+		LIST: ":feature:list",
+		INFO: ":feature:info"
+	],
+	LIBRARIES: [
+		THEMES : ":libraries:themes",
+		CORE   : ":libraries:core",
+		NETWORK: [
+			CORE: ":libraries:network:core"
+		]
+	],
+	SHARED   : [
+		FILM: [
+			DATA  : ":shared:film:data",
+			DOMAIN: ":shared:film:domain"
+		]
+	]
+]

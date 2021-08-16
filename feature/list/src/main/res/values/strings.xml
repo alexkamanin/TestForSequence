@@ -1,0 +1,8 @@
+<resources>
+	<string name="film_list_toolbar_title">Главная</string>
+	<string name="film_cover_not_found">Изображение не найдено</string>
+	<string name="film_genres_title">Жанры</string>
+	<string name="film_title">Фильмы</string>
+	<string name="error_message">Упс, похоже что-то пошло не так...\nПроверьте соединение с интернетом и др.</string>
+	<string name="error_button_text">Повторить</string>
+</resources>
