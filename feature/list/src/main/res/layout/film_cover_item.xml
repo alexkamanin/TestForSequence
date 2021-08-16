@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="@dimen/margin_padding_l"
+	android:layout_marginEnd="@dimen/margin_padding_l"
+	android:layout_marginBottom="@dimen/margin_padding_l"
+	app:cardCornerRadius="@dimen/margin_padding_s">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<ImageView
+			android:id="@+id/film_cover"
+			android:layout_width="0dp"
+			android:layout_height="150dp"
+			android:background="@android:color/darker_gray"
+			android:scaleType="center"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/film_cover_not_found"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="@string/film_cover_not_found"
+			android:textColor="@color/white"
+			android:visibility="gone"
+			app:layout_constraintBottom_toBottomOf="@id/film_cover"
+			app:layout_constraintEnd_toEndOf="@id/film_cover"
+			app:layout_constraintStart_toStartOf="@id/film_cover"
+			app:layout_constraintTop_toTopOf="@id/film_cover" />
+
+		<TextView
+			android:id="@+id/film_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:background="@color/color_for_film_name_cover_background"
+			android:ellipsize="end"
+			android:gravity="center"
+			android:maxLines="2"
+			android:paddingTop="@dimen/margin_padding_s"
+			android:paddingBottom="@dimen/margin_padding_s"
+			android:text="Название фильма"
+			android:textColor="@color/white"
+			app:layout_constraintBottom_toBottomOf="@+id/film_cover"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

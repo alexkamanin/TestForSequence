@@ -1,35 +1,9 @@
-plugins {
-	id 'com.android.application'
-	id 'kotlin-android'
-}
+apply plugin: Plugins.ANDROID_APPLICATION
+apply plugin: Plugins.KOTLIN_ANDROID
+apply plugin: Plugins.KOTLIN_EXTENSIONS
 
-android {
-	compileSdk 30
-
-	defaultConfig {
-		applicationId "ru.sequence.enterprise"
-		minSdk 22
-		targetSdk 30
-		versionCode 1
-		versionName "1.0"
-
-		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-	}
-
-	buildTypes {
-		release {
-			minifyEnabled false
-			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-		}
-	}
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
-	}
-	kotlinOptions {
-		jvmTarget = '1.8'
-	}
-}
+apply from: "$rootDir/build_system/application.gradle"
+apply from: "$rootDir/build_system/utils.gradle"
 
 dependencies {
 
@@ -37,4 +11,15 @@ dependencies {
 	implementation Dependencies.APP_COMPAT
 	implementation Dependencies.MATERIAL
 	implementation Dependencies.CONSTRAINT_LAYOUT
+
+	implementation Dependencies.NAVIGATION.FRAGMENT
+	implementation Dependencies.NAVIGATION.UI
+
+	implementation Dependencies.KOIN.CORE
+	implementation Dependencies.KOIN.KOIN_EXT
+	implementation Dependencies.KOIN.KOIN_SCOPE
+
+	unpackMapValues(Modules.LIBRARIES) { implementation project(it) }
+	unpackMapValues(Modules.SHARED) { implementation project(it) }
+	unpackMapValues(Modules.FEATURE) { implementation project(it) }
 }

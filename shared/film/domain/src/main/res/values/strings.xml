@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="film_genre_drama">драма</string>
+	<string name="film_genre_fantasy">фэнтези</string>
+	<string name="film_genre_crime">криминал</string>
+	<string name="film_genre_detective">детектив</string>
+	<string name="film_genre_melodrama">мелодрама</string>
+	<string name="film_genre_biography">биография</string>
+	<string name="film_genre_comedy">комедия</string>
+	<string name="film_genre_fantastic">фантастика</string>
+	<string name="film_genre_action_movie">боевик</string>
+	<string name="film_genre_thriller">триллер</string>
+	<string name="film_genre_musical">мюзикл</string>
+	<string name="film_genre_adventures">приключения</string>
+	<string name="film_genre_horrors">ужасы</string>
+</resources>
